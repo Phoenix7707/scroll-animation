@@ -6,10 +6,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 // --- 🔹 Lottie files ---
 const lottieFiles = [
-  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation-lottie/refs/heads/main/assets/sceneOne.json",
-  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation-lottie/refs/heads/main/assets/sceneTwo.json",
-  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation-lottie/refs/heads/main/assets/sceneThree.json",
-  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation-lottie/refs/heads/main/assets/sceneFour.json"
+  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation/refs/heads/main/assets/sceneOne.json",
+  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation/refs/heads/main/assets/sceneTwo.json",
+  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation/refs/heads/main/assets/sceneThree.json",
+  "https://raw.githubusercontent.com/Phoenix7707/scroll-animation/refs/heads/main/assets/sceneFour.json"
 ];
 
 // --- 🔹 Selectors ---
@@ -404,4 +404,5 @@ window.addEventListener('scroll', () => {
   if (currentFrame > scrollThreshold) {
     document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
   }
+
 });
