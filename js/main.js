@@ -64,11 +64,10 @@ async function preloadLotties() {
   hideLoader();
 }
 
-
 // 🚀 Start loading
 preloadLotties();
 
-// --- 🔹 Hide loader & fade overlay ---
+// --- 🔹 Hide loader & Fade overlay ---
 function hideLoader() {
   gsap.to(screenLoader, {
     opacity: 0,
@@ -235,23 +234,33 @@ window.addEventListener('load', () => {
 const projectImages = [
   {
     mobile: "assets/dilkarishtaMobile.jpg",
-    desktop: "assets/dilkarishtaDesktop.jpg"
+    desktop: "assets/dilkarishtaDesktop.jpg",
+    text: "Serving 3 million+ active users",
+    link: "https://www.dilkarishta.com/"
   },
   {
     mobile: "assets/buttlerMobile.jpg",
-    desktop: "assets/buttlerDesktop.jpg"
+    desktop: "assets/buttlerDesktop.jpg",
+    text: "500+ satisfied ERP clients",
+    link: "https://www.butlerapp.de/"
   },
   {
     mobile: "assets/hukdatingMobile.jpg",
-    desktop: "assets/hukdatingDesktop.jpg"
+    desktop: "assets/hukdatingDesktop.jpg",
+    text: "Secured $1M+ in funding",
+    link: "https://hukdating.com/"
   },
   {
     mobile: "assets/fyferMobile.jpg",
-    desktop: "assets/fyferDesktop.jpg"
+    desktop: "assets/fyferDesktop.jpg",
+    text: "World’s first social media platform for fitness enthusiasts",
+    link: "https://fyferapp.com/"
   },
   {
     mobile: "assets/milkarMobile.jpg",
-    desktop: "assets/milkarDesktop.jpg"
+    desktop: "assets/milkarDesktop.jpg",
+    text: "Pakistan’s largest volunteer network in collaboration with UNICEF, WWF, and more",
+    link: "https://milkar.com/"
   }
 ];
 const wrapper = document.querySelector(".myProjectsSwiper .swiper-wrapper");
@@ -264,6 +273,10 @@ projectImages.forEach(img => {
         <source media="(min-width: 769px)" srcset="${img.desktop}">
         <img src="${img.desktop}">
       </picture>
+      <div class="slide-overlay">
+        <span class="slide-text">${img.text}</span>
+        <a href="${img.link}" target="_blank" class="explore-btn">Explore</a>
+      </div>
     </div>
   `;
   wrapper.insertAdjacentHTML("beforeend", slide);
@@ -306,9 +319,6 @@ function updateProjectsPreview() {
 
   const start = 8200;
   const end = 11700;
-  console.log(total, currentFrame, start, end);
-  console.log(currentFrame < start);
-  console.log(currentFrame > end);
 
   if (currentFrame <= start) {
     tl.progress(0);
@@ -323,7 +333,6 @@ function updateProjectsPreview() {
   const progress = (currentFrame - start) / (end - start);
 
   tl.progress(progress);
-  console.log(progress);
 }
 
 window.addEventListener('scroll', updateProjectsPreview);
